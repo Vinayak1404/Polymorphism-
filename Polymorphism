@@ -1,0 +1,35 @@
+
+import java.util.*;
+abstract class User {
+    abstract void displayInfo();
+}
+class Student extends User {
+    @Override
+    void displayInfo() {
+        System.out.println("I am a Student.");
+    }
+}
+class Instructor extends User {
+    @Override
+    void displayInfo() {
+        System.out.println("I am an Instructor.");
+    }
+}
+class Admin extends User {
+    @Override
+    void displayInfo() {
+        System.out.println("I am an Admin.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<User> users = new ArrayList<>();
+        users.add(new Student());
+        users.add(new Instructor());
+        users.add(new Admin());
+
+        for (User user : users) {
+            user.displayInfo();
+        }
+    }
+}
